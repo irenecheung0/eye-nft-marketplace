@@ -1,0 +1,71 @@
+
+</body>
+</html>
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="main.css">
+        <link rel="stylesheet" href="popupstyle.css">
+        <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+        <!-- font awesome -->
+        <script src="https://kit.fontawesome.com/dbed6b6114.js" crossorigin="anonymous"></script>
+        
+    </head>
+    <body>
+        <nav class="navbar navbar-light" style="background-color: #74b3e0;">
+            <div class="container"><a class="navbar-brand logo" href="#">NFT Store</a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navcol-1">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="catalog-page.html">Browse</a></li>
+                        <li class="nav-item"><a class="nav-link" href="features.html">ABOUT US</a></li>
+                    </ul>
+                </div>
+            </div>
+          </nav>
+
+
+          <div class = "popup center">
+            <div class = "icon">
+                <img src = "eye-recognition.png"  width="60" height="60" />
+            </div>
+            <div class = "title">
+                New Art Added!!!!
+            </div>
+            <div class = "description">  
+                A new eye NFT is added to the collection. Check it out now!
+            </div>
+            <div class= "dismiss-btn">
+                <button id = "dismiss-popup-btn">
+                    Dismiss
+                </button>
+            </div>
+         </div>
+
+       <div class="center">
+           <button id= "open-popup-btn">
+               Open Popup
+        </div>
+
+    </body>
+
+</html>
+
+<script type="text/javascript">
+    document.getElementById("open-popup-btn").addEventListener("click",function(){
+      document.getElementsByClassName("popup")[0].classList.add("active");
+    });
+    
+
+
+    setTimeout(function(){
+      document.getElementsByClassName("popup")[0].classList.remove("active");
+    },3000);
+    </script>
