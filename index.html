@@ -310,33 +310,14 @@
             </div>
         </div>
 
-        <!-- <script>
-            const fs = require('fs');
-            const dir = './check';
-            myInterval = setInterval(setColor, 500);
-
-            function setColor() {
-                console.log("hi");
-                console.log(dir);
-                fs.readdir(dir, (err, files) => {
-                    console.log(files.length);
-                });
-              let x = document.body;
-              x.style.h2 = x.style.backgroundColor == "yellow" ? "pink" : "yellow";
-
-            }
-
-        </script> -->
     </body>
 </html>
 
 <script>
-    const dir = './check';
-    // const myInterval = setInterval(setColor, 500);
-    const myInterval2 = setInterval(test2, 5000);
+    const myInterval2 = setInterval(test2, 1000);
 
     function test2() {
-        var url = "http://ec2-54-165-44-104.compute-1.amazonaws.com:8000/items/";
+        var url = "http://0.0.0.0:5000";
 
         var xhr = new XMLHttpRequest();
         xhr.open("GET", url);
@@ -352,7 +333,7 @@
             console.log(xhr.responseText);
             let obj = JSON.parse(xhr.responseText);
             console.log(obj.num);
-            if (obj.num === 0){
+            if (obj.num === 1){
                 
                 window.location.reload()
             }
