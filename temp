@@ -18,7 +18,41 @@
 
 
     <body>
-        
+        <script>
+            test3();
+            function test3() {
+                var url = "http://0.0.0.0:5000";
+            
+                var xhr = new XMLHttpRequest();
+                xhr.open("GET", url);
+            
+                xhr.setRequestHeader("Accept", "application/json");
+                xhr.setRequestHeader("Content-Type", "application/json");
+                xhr.setRequestHeader("Access-Control-Allow-Origin", "*");
+            
+            
+                xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4) {
+                    let obj = JSON.parse(xhr.responseText);
+                    var images = obj.images;
+                    //console.log(images);
+                    window.addEventListener('load', () => {
+                        console.log("---------");
+                        console.log(images[images.length-1]);
+                        document.getElementById("eye1").src = images[images.length-1];
+                        document.getElementById("eye2").src = images[images.length-2];
+                        document.getElementById("eye3").src = images[images.length-3];
+                        document.getElementById("eye4").src = images[images.length-4];
+                        document.getElementById("eye5").src = images[images.length-5];
+                        document.getElementById("eye6").src = images[images.length-6];
+                        document.getElementById("eye7").src = images[images.length-7];
+                        document.getElementById("eye8").src = images[images.length-8];
+                    
+                    });
+                }};
+                xhr.send();
+            }
+            </script>
         
 
         <nav class="navbar navbar-light" style="background-color: #74b3e0;">
@@ -360,41 +394,7 @@
         </div>
     </body>
 </html>
-<script>
-    test3();
-    function test3() {
-        var url = "http://0.0.0.0:5000";
-    
-        var xhr = new XMLHttpRequest();
-        xhr.open("GET", url);
-    
-        xhr.setRequestHeader("Accept", "application/json");
-        xhr.setRequestHeader("Content-Type", "application/json");
-        xhr.setRequestHeader("Access-Control-Allow-Origin", "*");
-    
-    
-        xhr.onreadystatechange = function () {
-        if (xhr.readyState === 4) {
-            let obj = JSON.parse(xhr.responseText);
-            var images = obj.images;
-            //console.log(images);
-            window.addEventListener('load', () => {
-                console.log("---------");
-                console.log(images[images.length-1]);
-                document.getElementById("eye1").src = images[images.length-1];
-                document.getElementById("eye2").src = images[images.length-2];
-                document.getElementById("eye3").src = images[images.length-3];
-                document.getElementById("eye4").src = images[images.length-4];
-                document.getElementById("eye5").src = images[images.length-5];
-                document.getElementById("eye6").src = images[images.length-6];
-                document.getElementById("eye7").src = images[images.length-7];
-                document.getElementById("eye8").src = images[images.length-8];
-            
-            });
-        }};
-        xhr.send();
-    }
-    </script>
+
 <script>
     const myInterval2 = setInterval(test2, 1000);
 
