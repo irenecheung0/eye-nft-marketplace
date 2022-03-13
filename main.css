@@ -64,7 +64,6 @@ img{
 /* product section */
 .products{
     background: var(--alice-blue);
-    margin: auto;
     padding: 3.2rem 0;
 }
 .products .text-light{
@@ -265,15 +264,13 @@ img{
     }
 }
 
-
-/*for normal laptop viewing change back to repeat(4, 1fr)*/
 @media screen and (min-width: 1336px){
     .product-items{
-        grid-template-columns: repeat(10, 1fr);
+        grid-template-columns: repeat(4, 1fr);
     }
     .product-collection-wrapper{
         display: grid;
-        grid-template-columns: repeat(10, 1fr);
+        grid-template-columns: repeat(2, 1fr);
     }
     .flex{
         height: 60vh;
@@ -284,11 +281,10 @@ img{
 }
 
 #myVideo {
-    position: fixed;
+    display: flex;
     right: 0;
     bottom: 0;
     min-width: 100%;
     min-height: 100%;
   }
   
-
